@@ -49,12 +49,12 @@ jobs:
       # Step: Run Grype scan and generate vulnerability report
       - name: Generate Vulnerability Report
         run: |
-         grype dir:./ --output JSON --sort name,severity > vulnerability_report.json
-         grype dir:./ --output table --sort name,severity --fail-on low
+         grype dir:./ --output JSON > vulnerability_report.json
+         grype dir:./ --output table --fail-on low
         continue-on-error: true
         # This step runs Grype to scan the current directory for vulnerabilities and generates two outputs:
-        # - JSON format: Saves the results sorted by severity and name to vulnerability_report.json.
-        # - Table format: Displays the results sorted by severity and name, and fails if any vulnerabilities of "low" severity or higher are found.
+        # - JSON format: Saves the results as vulnerability_report.json.
+        # - Table format: Displays the results as fails if any vulnerabilities of "low" severity or higher are found.
         # The step will continue even if vulnerabilities are found.
 
 
