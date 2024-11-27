@@ -9,7 +9,7 @@ jobs:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        operating-system: [ ubuntu-latest, windows-latest ]
+        operating-system: [ ubuntu-latest ]
 
     steps:
       # Step 1: Checkout the repository code
